@@ -2,6 +2,12 @@ import os
 
 from flask import Flask
 
+from flask import (
+    Blueprint, flash, g, redirect, render_template, request, session, url_for
+)
+
+from flaskr.db import get_db
+from werkzeug.exceptions import abort
 
 def create_app(test_config=None):
     # create and configure the app
@@ -24,9 +30,8 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+    @app.route('/')
+    def home():
+        return render_template('index.html')
 
     return app
