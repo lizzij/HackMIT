@@ -1,6 +1,7 @@
 import os
 import pymongo
 import re
+import json
 
 from flask import Flask, request, url_for, redirect, render_template, g
 
@@ -31,16 +32,16 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    @app.route('/db')
     def get_image_url():
         query = { "timestamp": re.compile(".*", re.IGNORECASE) }
         data = dbcol.find(query)
         count = 0
         for x in data:
             count += 1
-        url = data[count - 1]
-        return str(url)
-        # return text
+        data.rewind()
+        url = data[int(count) - 1]
+        out = url['imageUrl']
+        return out
 
     @app.route('/')
     def home():
@@ -48,8 +49,8 @@ def create_app(test_config=None):
 
     @app.route('/farmer')
     def farmer():
-
-        return render_template('farmer.html')
+        image = get_image_url()
+        return render_template('farmer.html', image = image)
 
     @app.route('/shipper')
     def shipper():
