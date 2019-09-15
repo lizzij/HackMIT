@@ -39,9 +39,4 @@ def create_app(test_config=None):
     def buyer():
         return render_template('buyer.html')
 
-    from flaskr import farmer, shipper, buyer
-    app.register_blueprint(farmer.bp)
-    app.register_blueprint(shipper.bp)
-    app.register_blueprint(buyer.bp)
-
     return app
