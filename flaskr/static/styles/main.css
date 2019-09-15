@@ -2,3 +2,8 @@
   text-align: center;
   color: rgba(255, 255, 255, 0.9);
 }
+
+.new-shipment-form{
+  display: flex !important;
+  overflow: scroll !important;
+}
