@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/18c5306e-185d-47cc-9165-ad8be0ac3459/resourceGroups/hackmit/providers/Microsoft.Web/sites/hackmit",
+    "appService.deploySubpath": ""
+}
