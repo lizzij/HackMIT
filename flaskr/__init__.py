@@ -39,4 +39,8 @@ def create_app(test_config=None):
     def buyer():
         return render_template('buyer.html')
 
+    @app.route('/comingSoon')
+    def coming_soon():
+        return render_template('comingSoon.html')
+
     return app
