@@ -1,13 +1,6 @@
 import os
 
-from flask import Flask
-
-from flask import (
-    Blueprint, flash, g, redirect, render_template, request, session, url_for
-)
-
-from flaskr.db import get_db
-from werkzeug.exceptions import abort
+from flask import Flask, request, url_for, redirect, render_template, g
 
 def create_app(test_config=None):
     # create and configure the app
@@ -33,5 +26,10 @@ def create_app(test_config=None):
     @app.route('/')
     def home():
         return render_template('index.html')
+
+    from flaskr import farmer, shipper, buyer
+    app.register_blueprint(farmer.bp)
+    app.register_blueprint(shipper.bp)
+    app.register_blueprint(buyer.bp)
 
     return app
