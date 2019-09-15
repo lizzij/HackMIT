@@ -1,46 +1,25 @@
 import os
 
 from flask import Flask, request, url_for, redirect, render_template, g
+app = Flask(__name__)
 
-def create_app(test_config=None):
-    # create and configure the app
-    app = Flask(__name__, instance_relative_config=True)
-    app.config.from_mapping(
-        SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
-    )
+@app.route('/')
+def home():
+    return render_template('index.html')
 
-    if test_config is None:
-        # load the instance config, if it exists, when not testing
-        app.config.from_pyfile('config.py', silent=True)
-    else:
-        # load the test config if passed in
-        app.config.from_mapping(test_config)
+@app.route('/farmer')
+def farmer():
+    return render_template('farmer.html')
 
-    # ensure the instance folder exists
-    try:
-        os.makedirs(app.instance_path)
-    except OSError:
-        pass
+@app.route('/shipper')
+def shipper():
+    return render_template('shipper.html')
 
-    @app.route('/')
-    def home():
-        return render_template('index.html')
+@app.route('/buyer')
+def buyer():
+    return render_template('buyer.html')
 
-    @app.route('/farmer')
-    def farmer():
-        return render_template('farmer.html')
+@app.route('/comingSoon')
+def coming_soon():
+    return render_template('comingSoon.html')
 
-    @app.route('/shipper')
-    def shipper():
-        return render_template('shipper.html')
-
-    @app.route('/buyer')
-    def buyer():
-        return render_template('buyer.html')
-
-    @app.route('/comingSoon')
-    def coming_soon():
-        return render_template('comingSoon.html')
-
-    return app
