@@ -1,6 +1,13 @@
 import os
+import pymongo
 
 from flask import Flask, request, url_for, redirect, render_template, g
+
+uri = 'mongodb://hackmit:FPj59IerX8J4Yk570tJKYK6S1GkDeXPdvIH7cUmqJVFYwwJHqCkr7mPcSLzY4N6VitcgMIvrr7bTOHqotEaQQg==@hackmit.documents.azure.com:10255/?ssl=true&replicaSet=globaldb'
+client = pymongo.MongoClient(uri)
+db = client['freshdetect']
+dbcol = db['readings']
+
 
 def create_app(test_config=None):
     # create and configure the app
@@ -22,6 +29,10 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
+
+    @app.route('/db')
+    def db():
+        return dbcol
 
     @app.route('/')
     def home():
