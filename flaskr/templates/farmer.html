@@ -31,6 +31,7 @@
   <link href="./static/scripts/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="./static/styles/argon-dashboard.css?v=1.1.0" rel="stylesheet" />
+  <link href="./static/styles/main.css" rel="stylesheet" />
 </head>
 
 <body class="">
@@ -242,35 +243,81 @@
         <div class="header-body">
           <!-- Card stats -->
           <div class="row">
-            <form>
-              <div class="col">
-                <h2 class="mb-0">New Shipment</h2>
-                <h6 class="text-uppercase text-muted ls-1 mb-1"></h6>
+            <div class="col-xl-5 col-lg-6">
+              <form>
+                <div class="col">
+                  <h2 class="mb-0">New Shipment</h2>
+                  <h6 class="text-uppercase text-muted ls-1 mb-1"></h6>
+                </div>
+                <div style="display: flex; flex-wrap: wrap;">
+                  <div class="col-md-5">
+                    <div class="form-group">
+                      <label for="productType">Product Type</label>
+                      <input type="text" id="productType" class="form-control" placeholder="banana">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="productType">Weight</label>
+                      <input type="text" id="weight" placeholder="tons" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+                <div style="display: flex; flex-wrap: wrap;">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="from">From</label>
+                      <input type="text" id="from" class="form-control" placeholder="Ecuador">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="to">To</label>
+                      <input type="text" id="to" placeholder="United States" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+                <div style="display: flex; flex-wrap: wrap;">
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <label for="shipmentId">Shipment ID</label>
+                      <input class="form-control" id="shipmentId" placeholder="ABCD1234567" type="text">
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="row" style="margin-left: 15px;">
+                <button class="btn btn-outline-primary" type="button">Submit</button>
               </div>
-              <div style="display: flex; flex-wrap: wrap;">
-                <div class="col-md-5">
-                  <div class="form-group">
-                    <label for="productType">Product Type</label>
-                    <input type="text" id="productType" class="form-control" placeholder="banana">
+            </div>
+            <div class="col-xl-6 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Shipment Quality</h5>
+                      <span class="h2 font-weight-bold mb-0">Ripeness</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                        <i class="fas fa-chart-bar"></i>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="productType">Weight</label>
-                    <input type="text" id="weight" placeholder="tons" class="form-control" />
-                  </div>
-                </div>
-                <div class="col-md-8">
-                  <div class="form-group">
-                    <label for="shipmentId">Shipment ID</label>
-                    <input class="form-control" id="shipmentId" placeholder="ABCD1234567" type="text">
+                  <p class="mt-1 mb-0 text-muted text-sm">
+                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                    <span class="text-nowrap">Since last check</span>
+                  </p>
+                  <div class="row mt-3 mb-2">
+                    <div class="col">
+                      <div id="banana">
+                        <img src="./static/img/material/banana.jpg" alt="banana">
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </form>
-          </div>
-          <div class="row" style="margin-left: 0px;">
-            <button class="btn btn-outline-primary" type="button">Submit</button>
+            </div>
           </div>
         </div>
       </div>
