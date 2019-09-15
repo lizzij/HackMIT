@@ -40,8 +40,9 @@ def create_app(test_config=None):
             count += 1
         data.rewind()
         url = data[int(count) - 1]
-        out = url['imageUrl']
-        return out
+        imageUrl = url['imageUrl']
+        score = url['score']
+        return [imageUrl, score]
 
     @app.route('/')
     def home():
@@ -49,8 +50,8 @@ def create_app(test_config=None):
 
     @app.route('/farmer')
     def farmer():
-        image = get_image_url()
-        return render_template('farmer.html', image = image)
+        banana = get_image_url()
+        return render_template('farmer.html', banana = banana)
 
     @app.route('/shipper')
     def shipper():
