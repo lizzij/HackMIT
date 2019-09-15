@@ -240,93 +240,6 @@
     <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
       <div class="container-fluid">
         <div class="header-body">
-          <!-- Card stats -->
-          <div class="row">
-            <div class="col-xl-3 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Traffic</h5>
-                      <span class="h2 font-weight-bold mb-0">350,897</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                        <i class="fas fa-chart-bar"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">New buyers</h5>
-                      <span class="h2 font-weight-bold mb-0">2,356</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                        <i class="fas fa-chart-pie"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last week</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
-                      <span class="h2 font-weight-bold mb-0">924</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                        <i class="fas fa-users"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                    <span class="text-nowrap">Since yesterday</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
-                      <span class="h2 font-weight-bold mb-0">49,65%</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                        <i class="fas fa-percent"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -338,23 +251,10 @@
               <div class="row align-items-center">
                 <div class="col">
                   <h6 class="text-uppercase text-light ls-1 mb-1">Overview</h6>
-                  <h2 class="text-white mb-0">Ripeness</h2>
+                  <h2 class="text-white mb-0">Shipment</h2>
                 </div>
                 <div class="col">
-                  <ul class="nav nav-pills justify-content-end">
-                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="$" data-suffix="k">
-                      <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
-                        <span class="d-none d-md-block">Month</span>
-                        <span class="d-md-none">M</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-toggle="chart" data-target="#chart-sales" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="$" data-suffix="k">
-                      <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
-                        <span class="d-none d-md-block">Week</span>
-                        <span class="d-md-none">W</span>
-                      </a>
-                    </li>
-                  </ul>
+                  <map id="map-canvas"></map>
                 </div>
               </div>
             </div>
@@ -372,15 +272,30 @@
             <div class="card-header bg-transparent">
               <div class="row align-items-center">
                 <div class="col">
-                  <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
-                  <h2 class="mb-0">Total orders</h2>
+                  <h6 class="text-uppercase text-muted ls-1 mb-1">About</h6>
+                  <h2 class="mb-0">Shipment Information</h2>
                 </div>
               </div>
             </div>
             <div class="card-body">
               <!-- Chart -->
               <div class="chart">
-                <canvas id="chart-orders" class="chart-canvas"></canvas>
+                <div>
+                  <div><b>From</b>: Ecuador</div>
+                  <div><b>To</b>: United States</div>
+                  <div><b>Weigth (t)</b>: 340</div>
+                  <div><b>Ripeness</b>:</div>
+                  <div>- 2019/9/10 10:00 2%</div>
+                  <div>- 2019/9/10 16:00 2%</div>
+                  <div>- 2019/9/10 22:00 2%</div>
+                  <div>- 2019/9/11 04:00 3%</div>
+                  <div>- 2019/9/11 10:00 3%</div>
+                  <div>- 2019/9/11 16:00 3%</div>
+                  <div>- 2019/9/12 04:00 4%</div>
+                  <div>- 2019/9/12 10:00 4%</div>
+                  <div>- 2019/9/12 16:00 4%</div>
+                  <div>- 2019/9/12 22:00 5%</div>
+                </div>
               </div>
             </div>
           </div>
@@ -392,7 +307,7 @@
             <div class="card-header border-0">
               <div class="row align-items-center">
                 <div class="col">
-                  <h3 class="mb-0">Page visits</h3>
+                  <h3 class="mb-0">Ongoing Shipments</h3>
                 </div>
                 <div class="col text-right">
                   <a href="#!" class="btn btn-sm btn-primary">See all</a>
@@ -404,81 +319,81 @@
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col">Page name</th>
-                    <th scope="col">Visitors</th>
-                    <th scope="col">Unique users</th>
-                    <th scope="col">Bounce rate</th>
+                    <th scope="col">From</th>
+                    <th scope="col">To</th>
+                    <th scope="col">Weight (tons)</th>
+                    <th scope="col">Ripeness (%)</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th scope="row">
-                      /argon/
+                      Ecuador
                     </th>
                     <td>
-                      4,569
+                      United States
                     </td>
                     <td>
                       340
                     </td>
                     <td>
-                      <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
+                      <i class="fas fa-arrow-up text-success mr-3"></i> 5%
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">
-                      /argon/
+                      Belgium
                     </th>
                     <td>
-                      3,985
+                      Japan
                     </td>
                     <td>
                       319
                     </td>
                     <td>
-                      <i class="fas fa-arrow-down text-warning mr-3"></i> 46,53%
+                      <i class="fas fa-arrow-up text-success mr-3"></i> 5%
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">
-                      /argon/charts.html
+                      Philippines
                     </th>
                     <td>
-                      3,513
+                      Belgium
                     </td>
                     <td>
                       294
                     </td>
                     <td>
-                      <i class="fas fa-arrow-down text-warning mr-3"></i> 36,49%
+                      <i class="fas fa-arrow-up text-success mr-3"></i> 6%
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">
-                      /argon/tables.html
+                      Costa Rica
                     </th>
                     <td>
-                      2,050
+                      Netherlands
                     </td>
                     <td>
                       147
                     </td>
                     <td>
-                      <i class="fas fa-arrow-up text-success mr-3"></i> 50,87%
+                      <i class="fas fa-arrow-up text-warning mr-3"></i> 40%
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">
-                      /argon/profile.html
+                      Colombia
                     </th>
                     <td>
-                      1,795
+                      Germany
                     </td>
                     <td>
                       190
                     </td>
                     <td>
-                      <i class="fas fa-arrow-down text-danger mr-3"></i> 46,53%
+                      <i class="fas fa-arrow-up text-success mr-3"></i> 5%
                     </td>
                   </tr>
                 </tbody>
@@ -491,7 +406,7 @@
             <div class="card-header border-0">
               <div class="row align-items-center">
                 <div class="col">
-                  <h3 class="mb-0">Social traffic</h3>
+                  <h3 class="mb-0">Bidders</h3>
                 </div>
                 <div class="col text-right">
                   <a href="#!" class="btn btn-sm btn-primary">See all</a>
@@ -503,19 +418,15 @@
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col">Referral</th>
-                    <th scope="col">Visitors</th>
-                    <th scope="col"></th>
+                    <th scope="col">Company</th>
+                    <th scope="col">Ripeness Requirement</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th scope="row">
-                      Facebook
+                      Chiquita
                     </th>
-                    <td>
-                      1,480
-                    </td>
                     <td>
                       <div class="d-flex align-items-center">
                         <span class="mr-2">60%</span>
@@ -529,17 +440,14 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      Facebook
+                      Dole
                     </th>
                     <td>
-                      5,480
-                    </td>
-                    <td>
                       <div class="d-flex align-items-center">
-                        <span class="mr-2">70%</span>
+                        <span class="mr-2">43%</span>
                         <div>
                           <div class="progress">
-                            <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                            <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" style="width: 43%;"></div>
                           </div>
                         </div>
                       </div>
@@ -547,11 +455,8 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      Google
+                      Walmart
                     </th>
-                    <td>
-                      4,807
-                    </td>
                     <td>
                       <div class="d-flex align-items-center">
                         <span class="mr-2">80%</span>
@@ -565,17 +470,14 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      Instagram
+                      Biofuel
                     </th>
                     <td>
-                      3,678
-                    </td>
-                    <td>
                       <div class="d-flex align-items-center">
-                        <span class="mr-2">75%</span>
+                        <span class="mr-2">10%</span>
                         <div>
                           <div class="progress">
-                            <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                            <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;"></div>
                           </div>
                         </div>
                       </div>
@@ -583,17 +485,14 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      twitter
+                      Others
                     </th>
                     <td>
-                      2,645
-                    </td>
-                    <td>
                       <div class="d-flex align-items-center">
-                        <span class="mr-2">30%</span>
+                        <span class="mr-2">95%</span>
                         <div>
                           <div class="progress">
-                            <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
+                            <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
                           </div>
                         </div>
                       </div>
@@ -641,8 +540,6 @@
   <script src="./static/scripts/plugins/chart.js/dist/Chart.extension.js"></script>
   <!--   Argon JS   -->
   <script src="./static/scripts/argon-dashboard.min.js?v=1.1.0"></script>
-  <!-- slider JS -->
-  <script src="/assets/vendor/nouislider/distribute/nouislider.min.js"></script>
   <!-- map -->
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
   <script>
@@ -659,7 +556,7 @@
          draggable: true,
          map: map
      });
-  displayRoute('<%=ENTER FROM %>', '<%= ENTER TO %>',directionsService, directionsDisplay);
+  displayRoute('<%= Quito %>', '<%= Boston %>',directionsService, directionsDisplay);
   function displayRoute(origin, destination, service, display) {
      service.route({
        origin: origin,
