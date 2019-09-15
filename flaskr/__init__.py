@@ -1,5 +1,6 @@
 import os
 import pymongo
+import re
 
 from flask import Flask, request, url_for, redirect, render_template, g
 
@@ -31,8 +32,15 @@ def create_app(test_config=None):
         pass
 
     @app.route('/db')
-    def db():
-        return dbcol
+    def get_image_url():
+        query = { "timestamp": re.compile(".*", re.IGNORECASE) }
+        data = dbcol.find(query)
+        count = 0
+        for x in data:
+            count += 1
+        url = data[count - 1]
+        return str(url)
+        # return text
 
     @app.route('/')
     def home():
@@ -40,6 +48,7 @@ def create_app(test_config=None):
 
     @app.route('/farmer')
     def farmer():
+
         return render_template('farmer.html')
 
     @app.route('/shipper')
