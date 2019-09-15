@@ -27,6 +27,18 @@ def create_app(test_config=None):
     def home():
         return render_template('index.html')
 
+    @app.route('/farmer')
+    def farmer():
+        return render_template('farmer.html')
+
+    @app.route('/shipper')
+    def shipper():
+        return render_template('shipper.html')
+
+    @app.route('/buyer')
+    def buyer():
+        return render_template('buyer.html')
+
     from flaskr import farmer, shipper, buyer
     app.register_blueprint(farmer.bp)
     app.register_blueprint(shipper.bp)
